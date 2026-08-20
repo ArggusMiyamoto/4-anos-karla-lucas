@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>4 Anos de Nós ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: linear-gradient(135deg, #120008, #2b0014, #080808);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .heart {
+      position: fixed;
+      color: #ff4f91;
+      font-size: 20px;
+      animation: subir 8s linear infinite;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-10vh) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    .inicio {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .conteudo {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .pequeno {
+      color: #ff8bb8;
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(48px, 13vw, 100px);
+      line-height: 0.95;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 0 25px rgba(255, 55, 130, 0.5);
+    }
+
+    h1 span {
+      color: #ff4f91;
+    }
+
+    .frase {
+      font-size: clamp(20px, 5vw, 30px);
+      line-height: 1.5;
+      color: #f5dce6;
+      margin-bottom: 35px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 16px 30px;
+      border-radius: 50px;
+      background: #ff3f83;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 0 25px rgba(255, 63, 131, 0.4);
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      transform: scale(1.05);
+      background: #ff649b;
+    }
+
+    section {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: clamp(32px, 8vw, 55px);
+      margin-bottom: 45px;
+    }
+
+    .titulo span {
+      color: #ff4f91;
+    }
+
+    .historia {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 25px;
+      padding: 35px;
+      line-height: 1.8;
+      font-size: 19px;
+      color: #f4dfe8;
+      backdrop-filter: blur(10px);
+    }
+
+    .galeria {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .foto {
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #25000f;
+      border: 2px solid rgba(255, 79, 145, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cda8b8;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contador {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .tempo {
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 25px 10px;
+      text-align: center;
+      border: 1px solid rgba(255,79,145,0.2);
+    }
+
+    .tempo strong {
+      display: block;
+      font-size: 35px;
+      color: #ff5c98;
+    }
+
+    .tempo span {
+      color: #dcb7c7;
+    }
+
+    .carta {
+      max-width: 750px;
+      margin: auto;
+      background: #fff8fb;
+      color: #350014;
+      padding: 45px 30px;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transform: rotate(-1deg);
+    }
+
+    .carta h3 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #c90050;
+    }
+
+    .carta p {
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #cfa9b9;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer strong {
+      color: #ff4f91;
+    }
+
+    @media (max-width: 600px) {
+      .contador {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .historia {
+        padding: 25px;
+      }
+
+      .foto {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="heart" style="left:10%; animation-delay:0s;">♥</div>
+  <div class="heart" style="left:30%; animation-delay:2s;">♥</div>
+  <div class="heart" style="left:55%; animation-delay:4s;">♥</div>
+  <div class="heart" style="left:80%; animation-delay:1s;">♥</div>
+  <div class="heart" style="left:90%; animation-delay:5s;">♥</div>
+
+  <section class="inicio">
+    <div class="conteudo">
+
+      <div class="pequeno">Uma história que começou com um encontro...</div>
+
+      <h1>
+        4 anos<br>
+        <span>de nós ❤️</span>
+      </h1>
+
+      <p class="frase">
+        Quatro anos, milhares de momentos<br>
+        e uma pessoa que eu escolheria<br>
+        novamente em todos eles.
+      </p>
+
+      <a href="#historia" class="botao">
+        Nossa história ↓
+      </a>
+
+    </div>
+  </section>
+
+
+  <section id="historia">
+
+    <h2 class="titulo">
+      Nossa <span>história</span> ❤️
+    </h2>
+
+    <div class="historia">
+
+      <p>
+        Tudo começou de uma forma que talvez nenhum de nós
+        imaginasse que mudaria nossas vidas para sempre.
+      </p>
+
+      <br>
+
+      <p>
+        Desde aquele momento, fomos construindo nossa própria
+        história. Vieram conversas, risadas, momentos difíceis,
+        momentos inesquecíveis e milhares de pequenas lembranças
+        que fizeram chegarmos até aqui.
+      </p>
+
+      <br>
+
+      <p>
+        Hoje são <strong>4 anos</strong> de uma história que ainda
+        está sendo escrita.
+      </p>
+
+      <br>
+
+      <p>
+        E se eu pudesse voltar para aquele primeiro momento,
+        eu escolheria viver tudo novamente.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h2 class="titulo">
+      Nossos <span>momentos</span> 📸
+    </h2>
+
+    <div class="galeria">
+
+      <div class="foto">
+        <p>📷<br><br>
+        Aqui vai uma foto nossa</p>
+      </div>
+
+      <div class="foto">
+        <p>📷<br><br>
+        Aqui vai outra lembrança</p>
+      </div>
+
+      <div class="foto">
+        <p>📷<br><br>
+        Mais um momento especial</p>
+      </div>
+
+      <div class="foto">
+        <p>📷<br><br>
+        Uma lembrança para guardar</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h2 class="titulo">
+      O tempo ao seu <span>lado</span> ⏳
+    </h2>
+
+    <div class="contador">
+
+      <div class="tempo">
+        <strong id="anos">4</strong>
+        <span>Anos</span>
+      </div>
+
+      <div class="tempo">
+        <strong id="dias">0</strong>
+        <span>Dias</span>
+      </div>
+
+      <div class="tempo">
+        <strong id="horas">0</strong>
+        <span>Horas</span>
+      </div>
+
+      <div class="tempo">
+        <strong id="minutos">0</strong>
+        <span>Minutos</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h2 class="titulo">
+      Uma carta para <span>você</span> 💌
+    </h2>
+
+    <div class="carta">
+
+      <h3>Para Karla Fernanda ❤️</h3>
+
+      <p>
+        Meu amor,
+      </p>
+
+      <p>
+        Quatro anos podem parecer apenas um número,
+        mas para mim significam milhares de momentos
+        que tivemos juntos.
+      </p>
+
+      <p>
+        Obrigado por cada sorriso, cada conversa, cada
+        abraço e por todos os momentos que fizeram parte
+        da nossa história.
+      </p>
+
+      <p>
+        Eu espero que essa seja apenas uma pequena parte
+        de tudo que ainda vamos viver.
+      </p>
+
+      <p>
+        Feliz 4 anos para nós. ❤️
+      </p>
+
+      <p>
+        Com amor,<br>
+        <strong>Lucas Mateus</strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    Feito com ❤️ para comemorar nossos <strong>4 anos</strong>.
+    <br><br>
+    29 de agosto ❤️
+  </footer>
+
+
+  <script>
+
+    const inicio = new Date("2022-08-29T00:00:00");
+
+    function atualizarContador() {
+
+      const agora = new Date();
+
+      let anos = agora.getFullYear() - inicio.getFullYear();
+
+      const aniversario = new Date(
+        agora.getFullYear(),
+        inicio.getMonth(),
+        inicio.getDate()
+      );
+
+      if (agora < aniversario) {
+        anos--;
+      }
+
+      const ultimoAniversario = new Date(
+        inicio.getFullYear() + anos,
+        inicio.getMonth(),
+        inicio.getDate()
+      );
+
+      const diferenca = agora - ultimoAniversario;
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor(
+        (diferenca / (1000 * 60 * 60)) % 24
+      );
+      const minutos = Math.floor(
+        (diferenca / (1000 * 60)) % 60
+      );
+
+      document.getElementById("anos").textContent = anos;
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = horas;
+      document.getElementById("minutos").textContent = minutos;
+    }
+
+    atualizarContador();
+
+    setInterval(atualizarContador, 60000);
+
+  </script>
+
+</body>
+</html>
