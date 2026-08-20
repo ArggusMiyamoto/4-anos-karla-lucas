@@ -534,6 +534,60 @@ function tocarMusica() {
         musica.pause();
     }
 }
+const finalSecreto = document.createElement("div");
+
+finalSecreto.innerHTML = `
+<section style="
+    text-align:center;
+    padding:60px 20px;
+    margin-top:40px;
+">
+    <h2>Você chegou até o fim... ❤️</h2>
+
+    <button onclick="abrirSurpresa()" style="
+        padding:15px 25px;
+        border:none;
+        border-radius:30px;
+        background:#ff4d6d;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+    ">
+        ✨ Abrir surpresa ✨
+    </button>
+
+    <div id="surpresa" style="
+        display:none;
+        max-width:600px;
+        margin:30px auto;
+        padding:30px;
+        border-radius:20px;
+        background:rgba(255,255,255,0.08);
+        line-height:1.8;
+        font-size:18px;
+    ">
+        <p><strong>Karla,</strong></p>
+
+        <p>
+        4 anos foram só o começo.<br>
+        Obrigado por cada sorriso, cada momento e por tudo que ainda vamos viver.
+        </p>
+
+        <p>
+        Eu escolheria você novamente,
+        em todas as versões da nossa história. ❤️
+        </p>
+
+        <p><strong>Com amor, Lucas. ❤️</strong></p>
+    </div>
+</section>
+`;
+
+document.body.appendChild(finalSecreto);
+
+function abrirSurpresa() {
+    document.getElementById("surpresa").style.display = "block";
+}
 
   </script>
 
