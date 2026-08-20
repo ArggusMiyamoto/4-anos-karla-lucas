@@ -264,6 +264,20 @@
   <span>4 anos de amor ❤️</span>
 </h1>
 <button onclick="tocarMusica()">🎵 Estou com você</button>
+<button onclick="choverCoracoes()" style="
+    margin-top:15px;
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f91;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,79,145,0.4);
+">
+    ❤️ Fazer chover amor ❤️
+</button>
 
       <p class="frase">
         Quatro anos, milhares de momentos<br>
@@ -662,6 +676,46 @@ function abrirSurpresa() {
     }
 }
 </style>
+<script>
+function choverCoracoes() {
+    for (let i = 0; i < 30; i++) {
+        const coracao = document.createElement("div");
+
+        coracao.innerHTML = "❤️";
+        coracao.style.position = "fixed";
+        coracao.style.left = Math.random() * 100 + "vw";
+        coracao.style.top = "-30px";
+        coracao.style.fontSize = (18 + Math.random() * 25) + "px";
+        coracao.style.zIndex = "9999";
+        coracao.style.pointerEvents = "none";
+        coracao.style.animation = "cairCoracao 3s linear forwards";
+
+        document.body.appendChild(coracao);
+
+        setTimeout(() => {
+            coracao.remove();
+        }, 3000);
+    }
+}
+
+const estilo = document.createElement("style");
+
+estilo.innerHTML = `
+@keyframes cairCoracao {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+`;
+
+document.head.appendChild(estilo);
+</script>
 
 </body>
 </html>
